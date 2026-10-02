@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Student AI</h1>
+        <p>Learn Smarter • Achieve More</p>
+    </header>
+
+    <main>
+        <h2>Welcome to Student AI 👋</h2>
+        <p>Your AI-powered study assistant.</p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🤖 AI Tutor</h3>
+                <p>Ask questions and learn with AI.</p>
+                <button onclick="openTutor()">Open AI Tutor</button>
+            </div>
+
+            <div class="card">
+                <h3>📅 Study Planner</h3>
+                <p>Create your personal study plan.</p>
+                <button onclick="openPlanner()">Open Planner</button>
+            </div>
+
+            <div class="card">
+                <h3>📝 Practice Test</h3>
+                <p>Practice and test your knowledge.</p>
+                <button onclick="openTest()">Start Test</button>
+            </div>
+
+            <div class="card">
+                <h3>📊 Progress</h3>
+                <p>Track your learning progress.</p>
+                <button onclick="openProgress()">View Progress</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+<button onclick="openTutor()">Open AI Tutor</button>
+<script src="script.js"></script>
+<section id="tutorPage" class="tutor-page">
+    <div class="tutor-header">
+        <h2>🤖 AI Tutor</h2>
+        <p>Ask anything and learn step by step.</p>
+    </div>
+
+    <div id="chatBox" class="chat-box">
+        <div class="ai-message">
+            👋 Hello! I'm your Student AI Tutor.
+            <br>
+            What would you like to learn today?
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <input
+            type="text"
+            id="questionInput"
+            placeholder="Ask your question..."
+        >
+
+        <button onclick="sendQuestion()">Send</button>
+    </div>
+
+    <button class="back-button" onclick="closeTutor()">
+        ← Back to Home
+    </button>
+</section>

@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+header {
+    background: #101a3a;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #b8c7ff;
+}
+
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+main > p {
+    color: #68738a;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #68738a;
+    margin-bottom: 20px;
+}
+
+button {
+    border: none;
+    background: #4169e1;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        margin-top: 25px;
+    }.tutor-page {
+    display: none;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.tutor-header {
+    background: #101a3a;
+    color: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+
+.tutor-header p {
+    color: #b8c7ff;
+    margin-top: 8px;
+}
+
+.chat-box {
+    background: white;
+    min-height: 400px;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+}
+
+.ai-message {
+    background: #eef2ff;
+    padding: 15px;
+    border-radius: 14px;
+    max-width: 80%;
+}
+
+.user-message {
+    background: #4169e1;
+    color: white;
+    padding: 15px;
+    border-radius: 14px;
+    max-width: 80%;
+    margin: 12px 0 12px auto;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.back-button {
+    margin-top: 15px;
+    background: #101a3a;
+}
+
+@media (max-width: 600px) {
+    .tutor-page {
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .chat-box {
+        min-height: 350px;
+    }
+}
