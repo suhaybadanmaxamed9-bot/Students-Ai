@@ -10,30 +10,58 @@ function closeTutor() {
     document.querySelector("header").style.display = "block";
 }
 
-function sendQuestion() {
+async function sendQuestion() {
     const input = document.getElementById("questionInput");
     const chatBox = document.getElementById("chatBox");
 
     const question = input.value.trim();
 
-    if (question === "") {
-        return;
-    }
+    if (!question) return;
 
-    chatBox.innerHTML += `
-        <div class="user-message">
-            ${question}
-        </div>
-    `;
-
-    chatBox.innerHTML += `
-        <div class="ai-message">
-            🤖 I received your question!
-            <br>
-            Real AI connection will be added next.
-        </div>
-    `;
+    const userMessage = document.createElement("div");
+    userMessage.className = "user-message";
+    userMessage.textContent = question;
+    chatBox.appendChild(userMessage);
 
     input.value = "";
+
+    const thinking = document.createElement("div");
+    thinking.className = "ai-message";
+    thinking.textContent = "🤖 Thinking...";
+    chatBox.appendChild(thinking);
+
+    try {
+        const response = await fetch("/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                question: question
+            })
+        });
+
+        const data = await response.json();
+
+        thinking.remove();
+
+        const aiMessage = document.createElement("div");
+        aiMessage.className = "ai-message";
+        aiMessage.textContent =
+            data.answer || "Sorry, I couldn't answer.";
+
+        chatBox.appendChild(aiMessage);
+
+    } catch (error) {
+        thinking.remove();
+
+        const errorMessage = document.createElement("div");
+        errorMessage.className = "ai-message";
+        errorMessage.textContent =
+            "❌ Something went wrong. Please try again.";
+
+        chatBox.appendChild(errorMessage);
+    }
+
     chatBox.scrollTop = chatBox.scrollHeight;
 }
