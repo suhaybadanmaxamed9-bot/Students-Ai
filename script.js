@@ -1,4 +1,4 @@
-function openTutor() {
+function openTutor() {// Student AI deployment update
     document.querySelector("main").style.display = "none";
     document.querySelector("header").style.display = "none";
     document.getElementById("tutorPage").style.display = "block";
