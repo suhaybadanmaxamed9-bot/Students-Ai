@@ -1,4 +1,4 @@
-functions/chat.jsexport async function onRequestPost(context) {
+export async function onRequestPost(context) {
     const { request, env } = context;
 
     const { question } = await request.json();
