@@ -158,6 +158,8 @@ button:active {
     .chat-box {
         min-height: 350px;
     }
-}.planner-page {
+}
+
+.planner-page {
     display: none;
 }
